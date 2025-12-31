@@ -43,6 +43,7 @@ jobs:
           mkdir -p $HOME/.kube
           echo "${{ secrets.KUBE_CONFIG }}" | base64 -d > $HOME/.kube/config
           chmod 600 $HOME/.kube/config
+          kubectl cluster-info
 
       # Step 7: Update Kubernetes deployment
       - name: Update Kubernetes deployment
